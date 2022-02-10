@@ -1,0 +1,93 @@
+<!-- LES PIEDS SUIVENT MAINS -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="myutils.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: black">
+
+        <a-assets>
+            <a-asset-item id="leftfoot" src="./assets/modeles/piedgauche.glb"></a-asset-item>
+            <a-asset-item id="rightfoot" src="./assets/modeles/pieddroite.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- INSEREZ VOTRE ENVIRONNEMENT, CI-DESSOUS ... -->
+    
+        <a-plane position="0 -100 0" rotation="-90 0 0" width="4" height="4" color="black"> </a-plane>
+        <a-plane position="-2 2 0" rotation="0 90 0" width="4" height="100" color="white"> </a-plane>
+        <a-plane position="2 2 0" rotation="0 -90 0" width="4" height="100" color="white"> </a-plane>
+        <a-plane position="0 1 -2" rotation="0 0 0" width="4" height="100" color="white"> </a-plane>
+        <a-plane position="0 2 2" rotation="0 180 0" width="4" height="100" color="white"> </a-plane>
+        
+        <a-box position="0 2 -2" rotation="0 180 0" width="1" height="2" depth="0,3" color="black"> </a-box>
+
+        <a-box position="0 -7.5 0" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        <a-box position="1 -7.5 0" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        <!-- <a-box position="1.75 -7.5 0" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="-1 -7.5 0" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        <!-- <a-box position="-1.75 -7.5 0" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+
+        <a-box position="0 -7.5 1" width="0.25" depth="0.25" height="15" color="red"></a-box> 
+        <!-- <a-box position="1 -7.5 1" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="1.75 -7.5 1" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        <!-- <a-box position="-1 -7.5 1" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="-1.75 -7.5 1" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        
+        <!-- <a-box position="0 -7.5 1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="1 -7.5 1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> 
+        <!-- <a-box position="1.75 -7.5 1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="-1 -7.5 1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> 
+        <!-- <a-box position="-1.75 -7.5 1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        
+        <a-box position="0 -7.5 -1" width="0.25" depth="0.25" height="15" color="red"></a-box> 
+        <!-- <a-box position="1 -7.5 -1" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="1.75 -7.5 -1" width="0.25" depth="0.25" height="15" color="red"></a-box> 
+        <!-- <a-box position="-1 -7.5 -1" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <a-box position="-1.75 -7.5 -1" width="0.25" depth="0.25" height="15" color="red"></a-box>
+
+        <a-box position="0 -7.5 -1.75" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        <!-- <a-box position="1 -7.5 -1.75" width="0.25" depth="0.25" height="15" color="red"></a-box>  -->
+        <a-box position="1.75 -7.5 -1.75" width="0.25" depth="0.25" height="15" color="red"></a-box>
+        <!-- <a-box position="-1 -7.5 -1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+        <!-- <a-box position="-1.75 -7.5 -1.75" width="0.25" depth="0.25" height="15" color="red"></a-box> -->
+  
+        <!-- ... JUSQUE CI-DESSUS -->
+
+        <!-- PLAYER -->
+        <a-entity id="cameraRig">
+            
+            <!-- TETE -->
+            <a-entity id="tete" camera position="0 1.6 0" 
+                    look-controls wasd-controls>
+            </a-entity>
+
+            <!-- LEFT HAND -->
+            <a-entity id="maingauche" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc">
+            </a-entity>
+
+            <!-- RIGHT HAND -->
+            <a-entity id="maindroite" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc">
+            </a-entity>
+
+            <!-- PIEDS -->
+            <a-entity id="piedgauche" gltf-model="#leftfoot" 
+                      rotation="-90 0 180"
+                      follow-head-rotation="trace: false" follow-hand-position>
+            </a-entity>
+            <a-entity id="pieddroite" gltf-model="#rightfoot" 
+                      rotation="-90 0 180"
+                      follow-head-rotation="trace: false" follow-hand-position>
+            </a-entity>
+
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
