@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/elbobo/aframe-multisrc-component/b6d23310/dist/0.3/aframe-multisrc-component.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: darkblue">
+        <a-assets>
+            <img id="pelouse" src="pelouse.jpg">
+        </a-assets>
+      <a-box width="1" depth="1" height="1" 
+             src="pelouse.jpg"
+             position="-1.5 0.5 -2.5" 
+             color="11FF55">
+     </a-box>
+     <a-plane 
+             position="0 0 -4" 
+             rotation="-90 0 0" 
+             width="2" 
+             height="4" 
+             color="skyblue">
+     </a-plane>
+    </a-scene>
+  </body>
+</html>
